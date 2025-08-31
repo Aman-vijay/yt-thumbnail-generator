@@ -1,39 +1,21 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
-      <header className="flex justify-between items-center mb-16">
-        <div className="flex items-center space-x-3">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={44}
-            height={44}
-            className="rounded-full border border-primary shadow"
-          />
-          <span className="font-extrabold text-2xl tracking-tight text-primary">ThumbGen</span>
-        </div>
-        <div className="flex items-center space-x-4">
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="font-medium hover:text-primary transition">Features</Link>
-            <Link href="#how-it-works" className="font-medium hover:text-primary transition">How it works</Link>
-            <Link href="#pricing" className="font-medium hover:text-primary transition">Pricing</Link>
-          </nav>
-          <ModeToggle />
-          <Button variant="outline" className="font-semibold">Sign In</Button>
-        </div>
-      </header>
+      <Header />
+     
 
       {/* Hero Section */}
       <main>
         <section className="flex flex-col-reverse md:flex-row items-center justify-between py-16 gap-12">
           <div className="md:w-1/2 space-y-7">
+          <h2 className="flex flex-row">Not Backed By <p className="text-primary ml-2">Y Combinator</p></h2>
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-2">
               Instantly Create <span className="text-primary">YouTube Thumbnails</span>
             </h1>
@@ -136,16 +118,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t mt-20 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground">© 2024 ThumbGen. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-muted-foreground hover:text-primary transition">Terms</Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition">Privacy</Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition">Contact</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+
     </div>
   );
 }
